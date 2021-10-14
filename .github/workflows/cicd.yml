@@ -16,5 +16,5 @@ jobs:
         with:
           node-version: 12.x
       - run: git pull
-      - run: npm ci
+      - run: npm i
       - run: node index.js
