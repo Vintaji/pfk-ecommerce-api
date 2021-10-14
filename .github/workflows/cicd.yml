@@ -7,10 +7,13 @@ on:
     branches: [ production ]
       
 jobs:
-  CIeCD:
+  CI:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Dedploy
+      - name: Deploy
         uses: actions/setup-node@v2
+  CD:
+    runs-on: ubuntu-latest
+    steps:
       - run: sudo bash deploy.sh
