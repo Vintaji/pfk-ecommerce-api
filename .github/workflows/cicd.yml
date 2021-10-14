@@ -22,6 +22,6 @@ jobs:
           host: ${{secrets.SSH_HOST}}
           key: ${{secrets.SSH_KEY}} 
           username: ${{secrets.SSH_USERNAME}}
-      - run: git pull production
+      - run: git pull
       - run: npm install
       - run: pm2 restart APIOnline
