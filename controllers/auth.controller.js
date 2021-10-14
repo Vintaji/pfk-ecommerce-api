@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const authConfig = process.env.authConfig
 require('dotenv').config({ path: '../.env' })
 
-const User = require('../models/User');
+const User = require('../models/user');
 
 const router = express.Router();
 
