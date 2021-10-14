@@ -19,6 +19,5 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: node index.js
+        command: bash PFK/pfk-ecommerce-api deploy.sh 
     
