@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Deploy
         uses: actions/setup-node@v2
         with:
           command: bash PFK/pfk-ecommerce-api deploy.sh
