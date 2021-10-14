@@ -7,7 +7,7 @@ on:
     branches: [ production ]
       
 jobs:
-  CICD:
+  CIeCD:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
