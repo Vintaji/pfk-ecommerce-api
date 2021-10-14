@@ -19,7 +19,7 @@ jobs:
       - name: Deploy
         uses: actions/setup-node@v2
         with:
-          run: bash PFK/pfk-ecommerce-api deploy.sh
+          run: node PFK/pfk-ecommerce-api deploy.sh
           host: ${{secrets.SSH_HOST}}
           key: ${{secrets.SSH_KEY}} 
           username: ${{secrets.SSH_USERNAME}}
