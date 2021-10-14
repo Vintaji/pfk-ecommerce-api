@@ -1,3 +1,3 @@
 cd PFK/pfk-ecommerce-api
 git pull
-sudo pm2 restart APIOnline
+pm2 restart APIOnline
