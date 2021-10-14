@@ -7,20 +7,12 @@ on:
     branches: [ production ]
       
 jobs:
-  CI:
+  CI/CD:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-  CD:
-    needs: [CI]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
       - name: Deploy
-        uses: actions/setup-node@v2
-        with:
-          host: ${{secrets.SSH_HOST}}
-          key: ${{secrets.SSH_KEY}} 
-          username: ${{secrets.SSH_USERNAME}}
-      - run: bash PFK/pfk-ecommerce-api deploy.sh 
-      shell: bash
+      - run: git pull
+      - run: npm install
+      - run: node index.js
