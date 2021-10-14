@@ -22,5 +22,5 @@ jobs:
           host: ${{secrets.SSH_HOST}}
           key: ${{secrets.SSH_KEY}} 
           username: ${{secrets.SSH_USERNAME}}
-      - run: PFK/pfk-ecommerce-api deploy.sh 
+      - run: bash PFK/pfk-ecommerce-api deploy.sh 
       shell: bash
