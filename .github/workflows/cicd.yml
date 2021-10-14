@@ -1,26 +1,22 @@
-name: CI-CD
+name: CI/CD
 
 on:
   push:
     branches: [ production ]
   pull_request:
     branches: [ production ]
-
+      
 jobs:
   CI:
-  build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
+    steps:
+      - uses: actions/checkout@v2
   CD:
     needs: [CI]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        command: bash PFK/pfk-ecommerce-api deploy.sh 
-    
+      - uses: actions/checkout@v2
+      - name: Deploy to Digital Ocean
+        uses: actions/setup-node@v2
+        with:
+          command: bash PFK/pfk-ecommerce-api deploy.sh
