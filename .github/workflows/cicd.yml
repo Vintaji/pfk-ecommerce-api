@@ -13,4 +13,4 @@ jobs:
       - uses: actions/checkout@v2
       - name: Dedploy
         uses: actions/setup-node@v2
-      - run: sh PFK/pfk-ecommerce-api deploy.sh
+      - run: sudo bash deploy.sh
