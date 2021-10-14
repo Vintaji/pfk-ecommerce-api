@@ -14,4 +14,4 @@ jobs:
       - name: Dedploy
         uses: actions/setup-node@v2
         with:
-          command: bash KapiPay deploy.sh 
+          run: bash KapiPay deploy.sh 
