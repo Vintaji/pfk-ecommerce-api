@@ -15,6 +15,4 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 12.x
-      - run: git pull
-      - run: npm i
-      - run: node index.js
+          command: bash KapiPay deploy.sh 
