@@ -17,4 +17,4 @@ jobs:
     needs: [CI]
     runs-on: ubuntu-latest
     steps:
-      - run: sudo bash PFK/pfk-ecommerce-api/deploy.sh
+      - run: sudo bash PFK/pfk-ecommerce-api deploy.sh
