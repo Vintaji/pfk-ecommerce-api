@@ -14,6 +14,7 @@ jobs:
       - name: Deploy
         uses: actions/setup-node@v2
   CD:
+    needs: [CI]
     runs-on: ubuntu-latest
     steps:
-      - run: sudo bash deploy.sh
+      - run: sudo bash PFK/pfk-ecommerce-api/deploy.sh
