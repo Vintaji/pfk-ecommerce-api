@@ -17,4 +17,7 @@ jobs:
     needs: [CI]
     runs-on: ubuntu-latest
     steps:
-      - run: echo $PWD
+      run: |
+         chmod +x ./deploy.sh
+         ./deploy.sh
+      shell: bash
