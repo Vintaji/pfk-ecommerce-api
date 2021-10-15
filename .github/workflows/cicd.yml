@@ -24,6 +24,6 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
-        script: echo $PWD
+        script: sh PFK/pfk-ecommerce-api deploy.sh
         
           
