@@ -24,7 +24,7 @@ jobs:
           host: ${{ secrets.SSH.HOST }}
           username: root
           password: ${{ secrets.SSH_PASSWORD }}
-          privateKey: ${{ secrets.SSH_KEY}}
+          key: ${{ secrets.SSH_KEY}}
         env:
           CI: true
           
