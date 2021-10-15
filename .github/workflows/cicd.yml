@@ -25,3 +25,4 @@ jobs:
           username: root
           host: ${{ secrets.SSH_HOST }}
           privateKey: ${{ secrets.SSH_KEY }}
+          
