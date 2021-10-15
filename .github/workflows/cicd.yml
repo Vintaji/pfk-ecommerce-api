@@ -17,12 +17,14 @@ jobs:
     needs: [CI]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Deploy aa
+      - name: ls -a via OPEN SSH Private Key
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: echo $PWD
-          username: root
-          host: ${{ secrets.SSH_HOST }}
-          privateKey: ${{ secrets.SSH_KEY }}
+          command: ls -a
+          host: ${{ secrets.HOST }}
+          username: garygrossgarten
+          password: ${{ secrets.SSH_PASSWORD }}
+          privateKey: ${{ secrets.SSH_KEY}}
+        env:
+          CI: true
           
