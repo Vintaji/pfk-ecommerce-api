@@ -17,4 +17,4 @@ jobs:
     needs: [CI]
     runs-on: ubuntu-latest
     steps:
-      - run: ll
+      - run: ls
