@@ -17,5 +17,11 @@ jobs:
     needs: [CI]
     runs-on: ubuntu-latest
     steps:
-      - name: Run script
-        run: sudo bash ./deploy.sh
+      - uses: actions/checkout@v2
+      - name: Deploy 
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: bash deploy.sh
+          username: root
+          host: ${{ secrets.SSH_HOST }}
+          privateKey: ${{ secrets.SSH_KEY }}
