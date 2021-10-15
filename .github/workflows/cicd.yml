@@ -17,4 +17,4 @@ jobs:
     needs: [CI]
     runs-on: ubuntu-latest
     steps:
-      - run: echo "{path}"
+      - run: bash deploy.sh
