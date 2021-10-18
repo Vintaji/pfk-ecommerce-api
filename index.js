@@ -8,11 +8,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-require('./controllers/auth.controller')(app);
+require('./controllers/auth.controller');
 require('./controllers/project.controller')(app);
-require('./controllers/payment.controller');
-require('./controllers/charges.controller');
-require('./controllers/balance.controller');
+require('./controllers/user.controller');
 
 app.use(routers);
 
