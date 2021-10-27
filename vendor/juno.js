@@ -1,6 +1,7 @@
-const axios = require('axios')
-const juno = axios
-require('dotenv').config()
+/* eslint-disable no-useless-catch */
+const axios = require('axios');
+const juno = axios;
+require('dotenv').config();
 
 const config = {
     baseUrlAuth: process.env.baseUrlAuth,
@@ -10,7 +11,7 @@ const config = {
     secret: process.env.secret,
     resourceToken: process.env.resourceToken,
     acessToken: process.env.acessToken
-}
+};
 
 const payment = {
 
@@ -53,7 +54,7 @@ const payment = {
             const instance = await payment.initAuth();
 
             let params = new URLSearchParams();
-            params.append('grant_type','client_credentials');
+            params.append('grant_type', 'client_credentials');
 
             const res = await instance.post(config.path, params);
 
@@ -89,9 +90,9 @@ const payment = {
                     'Content-type': 'application/json'
                 }
             })
-            .catch(e => {
-                console.log(e.response.data);
-            });
+                .catch(e => {
+                    console.log(e.response.data);
+                });
 
             return res;
 
@@ -111,9 +112,9 @@ const payment = {
                     'Content-type': 'application/json'
                 }
             })
-            .catch(e => {
-                console.log(e.response.data);
-            });
+                .catch(e => {
+                    console.log(e.response.data);
+                });
 
             return res.data._embedded.charges[0];
 
@@ -133,9 +134,9 @@ const payment = {
                     'Content-type': 'application/json'
                 }
             })
-            .catch(e => {
-                console.log(e.response.data);
-            });
+                .catch(e => {
+                    console.log(e.response.data);
+                });
 
             return res.data._embedded.charges[0];
 
@@ -155,9 +156,9 @@ const payment = {
                     'Content-type': 'application/json'
                 }
             })
-            .catch(e => {
-                console.log(e.response.data);
-            });
+                .catch(e => {
+                    console.log(e.response.data);
+                });
 
             return res.data._embedded.charges[0];
 
@@ -177,9 +178,9 @@ const payment = {
                     'Content-type': 'application/json'
                 }
             })
-            .catch(e => {
-                console.log(e.response.data);
-            });
+                .catch(e => {
+                    console.log(e.response.data);
+                });
 
             return res.data.payments[0];
 
@@ -195,7 +196,7 @@ const payment = {
 
             const obj = {
                 amount
-            }
+            };
             
             const instance = await payment.init();
             const res = await instance.post(`payments/${id}/refunds`, obj, {
@@ -203,9 +204,9 @@ const payment = {
                     'Content-type': 'application/json'
                 }
             })
-            .catch(e => {
-                console.log(e.response.data);
-            });
+                .catch(e => {
+                    console.log(e.response.data);
+                });
 
             return res.data;
 
@@ -215,6 +216,6 @@ const payment = {
 
     }
 
-}
+};
 
 module.exports = payment;

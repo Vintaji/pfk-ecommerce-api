@@ -1,7 +1,7 @@
 const mongoose = require('../database/index');
 const bcrypt = require ('bcryptjs');
 
-const UserSchema = new mongoose.Schema({
+const TshirtSchema = new mongoose.Schema({
     name: {
         type: String,
         require: true,
@@ -21,14 +21,23 @@ const UserSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
+    adress: {
+        type: Object,
+    },
+    phone: {
+        type: String,
+    },
+    cardHash: {
+        type: String,  
+    },
 });
 
-UserSchema.pre('save', async function(next) {
+TshirtSchema.pre('save', async function(next) {
     const hash = await bcrypt.hash(this.password, 10);
     this.password = hash;
     next();
 });
 
-const User = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', TshirtSchema);
 
 module.exports = User;

@@ -4,19 +4,23 @@ const bcrypt = require ('bcryptjs');
 const UserSchema = new mongoose.Schema({
     name: {
         type: String,
-        require: true,
+        require: true
+    },
+    id: {
+        type: String,
+        require: true
     },
     size: {    
         type: String,
-        required: true,  
+        required: true
     },
     color: {
         type: String,
-        required: true,    
+        required: true,   
     },
     createdAt: {
         type: Date,
-        default: Date.now,
+        default: Date.now
     },
 });
 
