@@ -25,5 +25,3 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
         script: sh PFK/pfk-ecommerce-api/deploy.sh
-        
-          
