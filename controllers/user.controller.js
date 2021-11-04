@@ -1,6 +1,7 @@
 const payment = require('../vendor/juno.js');
 const User = require('../models/user');
 const axios = require('axios');
+const errorHandler = require('../vendor/sentry');
 
 module.exports = {
 
@@ -43,6 +44,7 @@ module.exports = {
             res.status(200).send(charge);
 
         } catch (err) {
+            errorHandler(err);
             return res.status(400).send({ message: err.message });
         }
     },
