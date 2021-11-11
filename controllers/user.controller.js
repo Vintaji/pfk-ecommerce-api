@@ -20,9 +20,8 @@ module.exports = {
   
     listCharges: async (req, res) => {
         try {
-            const charges = await payment.listCharges(req.headers.resourcetoken);
+            const charges = await payment.listCharges;
             return res.status(200).send(charges);
-
         } catch (err) {
             return res.status(400).send({ err: err.message });
         }
@@ -30,7 +29,7 @@ module.exports = {
 
     chargeByChargeId: async (req, res) => {
         try {
-            const charge = await payment.chargeById(req.params.id, req.headers.resourcetoken);
+            const charge = await payment.chargeById;
             return res.status(200).send(charge);
 
         } catch (err) {
@@ -40,7 +39,7 @@ module.exports = {
 
     createCharge: async (req, res) => {
         try {
-            const charge = await payment.charge(req.body, req.headers.resourcetoken);
+            const charge = await payment.charge;
             res.status(200).send(charge);
 
         } catch (err) {
@@ -51,7 +50,7 @@ module.exports = {
 
     cardPayment: async (req, res) => {
         try {
-            const card_payment = await payment.cardPayment(req.body, req.headers.resourcetoken);
+            const card_payment = await payment.cardPayment;
             return res.status(200).send(card_payment);
 
         } catch (err) {
@@ -61,7 +60,7 @@ module.exports = {
 
     saveCard: async (req, res) => {
         try {
-            const card_token = await payment.cardTokenize(req.body, req.headers.resourcetoken);
+            const card_token = await payment.cardTokenize;
             return res.status(200).send(card_token);
 
         } catch (err) {

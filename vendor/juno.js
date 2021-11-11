@@ -105,7 +105,7 @@ const payment = {
     charge: async (obj) => {
 
         try {
-            
+
             const instance = await payment.init();
             const res = await instance.post('charges', obj, {
                 headers: {

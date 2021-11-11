@@ -11,8 +11,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 require('./controllers/auth.controller');
-require('./controllers/project.controller')(app);
 require('./controllers/user.controller');
+require('./controllers/products.controller');
+require('./controllers/order.controller');
 
 app.use(routers);
 
