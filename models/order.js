@@ -10,6 +10,10 @@ const OrderSchema = new mongoose.Schema({
     owner: {
         type: Object,
     },
+    orderAt: {
+        type: Date,
+        default: Date.now,
+    },
 });
 
 const Order = mongoose.model('Order', OrderSchema);

@@ -13,6 +13,9 @@ module.exports = {
     },
     listOrder: async (req, res) => {
         const orders = await order.find();
-        res.send(orders);
+        const obj = {
+            Pedidos: orders.reverse()
+        };
+        return res.send(obj);
     },
 };

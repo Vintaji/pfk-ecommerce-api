@@ -15,7 +15,7 @@ const { getUserBalance } = require('../controllers/user.controller');
 router.get('/balance', getUserBalance);
 
 const charges = require('../controllers/user.controller');
-router.post('/charge', usercontroller.createCharge);
+router.post('/charges', usercontroller.createCharge);
 router.post('/payment_card', usercontroller.cardPayment);
 router.post('/save_card', usercontroller.saveCard);
 router.get('/charges', usercontroller.listCharges);

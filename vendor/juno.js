@@ -143,6 +143,27 @@ const payment = {
         } catch(err) {
             throw err;
         }
+    },
+    
+    listCharges: async (obj) => {
+
+        try {
+            
+            const instance = await payment.init();
+            const res = await instance.post('/charges', obj, {
+                headers: {
+                    'Content-type': 'application/json'
+                }
+            })
+                .catch(e => {
+                    console.log(e.response.data);
+                });
+
+            return res.data._embedded.charges[0];
+
+        } catch(err) {
+            throw err;
+        }
 
     },
 

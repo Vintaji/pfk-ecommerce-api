@@ -23,17 +23,17 @@ module.exports = {
             const charges = await payment.listCharges;
             return res.status(200).send(charges);
         } catch (err) {
-            return res.status(400).send({ err: err.message });
+            return res.status(400).send({ err: 'error finging' });
         }
     },
 
     chargeByChargeId: async (req, res) => {
         try {
-            const charge = await payment.chargeById;
+            const charge = await payment.consultCharge;
             return res.status(200).send(charge);
 
         } catch (err) {
-            return res.status(400).send({ message: err.message });
+            return res.status(400).send({ message: 'error finging' });
         }
     },
 
@@ -44,7 +44,7 @@ module.exports = {
 
         } catch (err) {
             errorHandler(err);
-            return res.status(400).send({ message: err.message });
+            return res.status(400).send({ message: 'error finging' });
         }
     },
 
@@ -54,7 +54,7 @@ module.exports = {
             return res.status(200).send(card_payment);
 
         } catch (err) {
-            return res.status(400).send({ message: err.message });
+            return res.status(400).send({ message: 'error finging' });
         }
     },
 
@@ -64,7 +64,7 @@ module.exports = {
             return res.status(200).send(card_token);
 
         } catch (err) {
-            return res.status(400).send({ message: err.message });
+            return res.status(400).send({ message: 'error finging' });
         }
     },
 };
